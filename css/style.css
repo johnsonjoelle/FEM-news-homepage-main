@@ -28,6 +28,9 @@ body > * {
   margin-left: auto;
   margin-right: auto;
 }
+.mobile-only {
+  display: none;
+}
 
 /* Page Header */
 header {
@@ -38,7 +41,7 @@ header {
 nav {
   text-align: right;
 }
-nav ul {
+.nav-links {
   list-style: none;
   display: flex;
   column-gap: 2.5rem;
@@ -46,11 +49,11 @@ nav ul {
   align-items: center;
   height: 100%;
 }
-nav li {
+.nav-link {
   transition: color 300ms;
   cursor: pointer;
 }
-nav li:hover {
+.nav-link:hover {
   color: var(--nhp-red);
 }
 
@@ -105,9 +108,10 @@ p {
 }
 .feature-title {
   grid-area: title;
-  font-size: 4.3rem;
+  font-size: 3.7rem;
   line-height: 1;
   color: var(--nhp-dark-blue);
+  font-weight: 800;
 }
 .feature-story .blurb {
   grid-area: blurb;
@@ -178,3 +182,91 @@ h4 {
   margin-top: 3rem;
 }
 .attribution a { color: hsl(228, 45%, 44%); }
+
+/* Mobile Layout */
+@media screen and (max-width: 450px) {
+  body {
+    padding: 0 1rem;
+    position: relative;
+  }
+  .desktop-only {
+    display: none;
+  }
+  header {
+    padding: 2rem 0 2rem;
+  }
+  .logo-container {
+    max-height: 30px;
+  }
+  .logo {
+    height: 100%;
+    width: auto;
+  }
+  /* Navigation */
+  .main-nav {
+    justify-self: flex-end;
+    align-self: center;
+    color: var(--nhp-dark-blue);
+  }
+  .mobile-only:not(#nav-close) {
+    display: block;
+  }
+  /* .nav-icon {
+    text-align: right;
+  } */
+  .main-nav.active #nav-close {
+    display: block;
+  }
+  #nav-close {
+    margin-left: auto;
+    margin-bottom: 6rem;
+    cursor: pointer;
+  }
+  .nav-links {
+    display: none;
+    position: absolute;
+    top: 0;
+    left: 30%;
+    right: 0;
+    height: 100vh;
+    background-color: var(--nhp-white);
+    padding: 1.6rem;
+    text-align: left;
+  }
+  .main-nav.active .nav-links {
+    display: block;
+  }
+  .nav-link {
+    font-size: 1.24rem;
+    margin: 1.6rem 0;
+  }
+
+  .feature {
+    display: block;
+  }
+  .feature-story {
+    display: block;
+    margin-bottom: 4.3rem;
+  }
+  .feature-title {
+    font-size: 2.7rem;
+    padding: 1.7rem 0 1rem;
+  }
+  button {
+    margin-top: 2rem;
+  }
+
+  .sidebar {
+    padding: 20px 20px 0;
+  }
+  .sidebar-title {
+    font-size: 2.2rem;
+  }
+
+  .top-stories {
+    display: block;
+  }
+  .top-story {
+    margin-bottom: 2rem;
+  }
+}
