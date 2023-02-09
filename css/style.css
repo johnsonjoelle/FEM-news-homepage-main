@@ -211,16 +211,15 @@ h4 {
   .mobile-only:not(#nav-close) {
     display: block;
   }
-  /* .nav-icon {
-    text-align: right;
-  } */
+  .nav-icon {
+    cursor: pointer;
+  }
   .main-nav.active #nav-close {
     display: block;
   }
   #nav-close {
     margin-left: auto;
     margin-bottom: 6rem;
-    cursor: pointer;
   }
   .nav-links {
     display: none;
