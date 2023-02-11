@@ -205,6 +205,14 @@ h4 {
 }
 .attribution a { color: hsl(228, 45%, 44%); }
 
+@media screen and (max-width: 849px) {
+  .feature {
+    grid-template-columns: 1fr;
+    grid-template-rows: max-content 1fr;
+    grid-template-areas: "news" "side";
+  }
+}
+
 /* Mobile Layout */
 @media screen and (max-width: 600px) {
   body {
